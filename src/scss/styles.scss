@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Roboto', sans-serif, FontAwesome;
+}
+
+/* Color Palette */
+$redCrayola: #ED254E;
+$naplesYellow: #F9DC5C;
+$teaGreen: #C2EABD;
+$oxfordBlue: #011936;
+$Charcoal: #465362;
+$fa-bounce-animation: fa-bounce 1s ease-out infinite;
+
+body {
+    min-height: 100vh; padding: 1em;
+    main, .colors, .color, .direction, .preview, .code {
+        display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
+    }
+    main {
+        section {
+            position: absolute; top: 50%;
+            transform: translateY(-50%);        
+        }       
+        .card-container {
+            width: auto; max-width: 550px; height: auto;
+            padding: 1em; border-radius: 10px; box-shadow: 0px 0px 5px 5px #465362;
+            background-color: $teaGreen;
+
+            .card-title {
+                width: 100%; display: inline-block;
+                text-align: center; text-transform: uppercase; font-size: 16px; font-weight: bold; letter-spacing: 1px;                
+                color: $redCrayola; cursor: default;
+            }            
+            
+            .colors { /* Color */
+                flex-wrap: nowrap; gap: 10px;
+                text-align: center;
+                margin: 10px 0 5px 0; border-radius: 5px; padding: 0.5rem;
+                background-color: $redCrayola; border: 2px solid $oxfordBlue; 
+                
+                .color {                       
+                    input[type = color] { 
+                        width: 75%; height: 25px;
+                        appearance: none; -moz-appearance: none; -webkit-appearance: none; background: none;
+                        border: 2px solid white; padding: 0; cursor: pointer; 
+                        &:hover {
+                            animation: $fa-bounce-animation; animation-iteration-count: 1;        
+                            --fa-bounce-height: 1;                 
+                        }                                            
+                    }
+                    input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+                        -webkit-appearance: none; margin: 0;
+                    }                     
+                    input[type = number] {
+                        width: 30px; height: 25px; margin-left: auto;
+                        font-size: 10px; text-align: center; letter-spacing: 1px;                     
+                        appearance: none; -moz-appearance: textfield;
+                    }
+                    input[type = range] {
+                        cursor: pointer;
+                    }                     
+                }      
+                .div-color3.disabled {
+                    pointer-events: none; opacity: .5;                    
+                }          
+            }
+            .form-check { /* Color #3 Checkbox */   
+                font-size: 13px;      
+                padding-inline: 5px; float: right; margin: 0;
+                input[type = checkbox] { 
+                    border: 1px solid $oxfordBlue;
+                    cursor: pointer; transition: 0.25s;
+                    &:checked {
+                        background-color: $redCrayola; border-color: $redCrayola;
+                    }
+                    &:hover { box-shadow:  0px 0px 5px 2px rgba(0, 0, 0, 0.5); }                    
+                }   
+            }
+
+            .direction { /* Gradient Direction */
+                width: 100%;
+                padding: 5px;
+                border-radius: 5px; border: 2px solid $oxfordBlue; 
+                background-color: $naplesYellow; color: white;
+
+                button {
+                    border: none;
+                    &:focus, &:hover, &:active { font-weight: bolder; color: $redCrayola; }
+                }
+                .btn.active { color: $redCrayola; }
+                .isRadial { border-radius: 0; border-left: 1px solid; }
+                
+            }
+
+            .preview { /* Gradient Preview */
+                width: 100%; height: 100px;
+                margin: 10px 0; border-radius: 5px;
+                border: 2px solid $oxfordBlue; 
+                span { 
+                    color: white; opacity: .5;
+                    font-size: 14px; font-weight: bold; letter-spacing: 2px;
+                    cursor: default;
+                }
+            }
+
+            .code { /* Gradient CSS Code */
+                flex-wrap: nowrap;
+                .form-floating {
+                    width: 90%;
+                    label {
+                        font-size: 12px;
+                    }
+                    textarea {                    
+                        height: fit-content;
+                        border-radius: 5px; border: 2px solid $oxfordBlue;
+                        overflow: auto; resize: none; cursor: copy;
+                        font-size: 14px; 
+                        &::selection { background: $naplesYellow; }                       
+                    }
+                }
+                button {
+                    margin-left: 10px;
+                    background-color: $redCrayola; border-color: $redCrayola;
+                    &:hover { background-color: var(--bs-btn-hover-bg); }
+                }                
+            }
+        }
+    }
+}
