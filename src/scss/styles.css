@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif, FontAwesome;
+}
+
+/* Color Palette */
+body {
+  min-height: 100vh;
+  padding: 1em;
+}
+body main, body .colors, body .color, body .direction, body .preview, body .code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+body main section {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+body main .card-container {
+  width: auto;
+  max-width: 550px;
+  height: auto;
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 5px #465362;
+  background-color: #C2EABD;
+}
+body main .card-container .card-title {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #ED254E;
+  cursor: default;
+}
+body main .card-container .colors { /* Color */
+  flex-wrap: nowrap;
+  gap: 10px;
+  text-align: center;
+  margin: 10px 0 5px 0;
+  border-radius: 5px;
+  padding: 0.5rem;
+  background-color: #ED254E;
+  border: 2px solid #011936;
+}
+body main .card-container .colors .color input[type=color] {
+  width: 75%;
+  height: 25px;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: 2px solid white;
+  padding: 0;
+  cursor: pointer;
+}
+body main .card-container .colors .color input[type=color]:hover {
+  animation: fa-bounce 1s ease-out infinite;
+  animation-iteration-count: 1;
+  --fa-bounce-height: 1;
+}
+body main .card-container .colors .color input::-webkit-outer-spin-button, body main .card-container .colors .color input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+body main .card-container .colors .color input[type=number] {
+  width: 30px;
+  height: 25px;
+  margin-left: auto;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 1px;
+  -webkit-appearance: none;
+          appearance: none;
+  -moz-appearance: textfield;
+}
+body main .card-container .colors .color input[type=range] {
+  cursor: pointer;
+}
+body main .card-container .colors .div-color3.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+body main .card-container .form-check { /* Color #3 Checkbox */
+  font-size: 13px;
+  padding-inline: 5px;
+  float: right;
+  margin: 0;
+}
+body main .card-container .form-check input[type=checkbox] {
+  border: 1px solid #011936;
+  cursor: pointer;
+  transition: 0.25s;
+}
+body main .card-container .form-check input[type=checkbox]:checked {
+  background-color: #ED254E;
+  border-color: #ED254E;
+}
+body main .card-container .form-check input[type=checkbox]:hover {
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.5);
+}
+body main .card-container .direction { /* Gradient Direction */
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid #011936;
+  background-color: #F9DC5C;
+  color: white;
+}
+body main .card-container .direction button {
+  border: none;
+}
+body main .card-container .direction button:focus, body main .card-container .direction button:hover, body main .card-container .direction button:active {
+  font-weight: bolder;
+  color: #ED254E;
+}
+body main .card-container .direction .btn.active {
+  color: #ED254E;
+}
+body main .card-container .direction .isRadial {
+  border-radius: 0;
+  border-left: 1px solid;
+}
+body main .card-container .preview { /* Gradient Preview */
+  width: 100%;
+  height: 100px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 2px solid #011936;
+}
+body main .card-container .preview span {
+  color: white;
+  opacity: 0.5;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: default;
+}
+body main .card-container .code { /* Gradient CSS Code */
+  flex-wrap: nowrap;
+}
+body main .card-container .code .form-floating {
+  width: 90%;
+}
+body main .card-container .code .form-floating label {
+  font-size: 12px;
+}
+body main .card-container .code .form-floating textarea {
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 5px;
+  border: 2px solid #011936;
+  overflow: auto;
+  resize: none;
+  cursor: copy;
+  font-size: 14px;
+}
+body main .card-container .code .form-floating textarea::-moz-selection {
+  background: #F9DC5C;
+}
+body main .card-container .code .form-floating textarea::selection {
+  background: #F9DC5C;
+}
+body main .card-container .code button {
+  margin-left: 10px;
+  background-color: #ED254E;
+  border-color: #ED254E;
+}
+body main .card-container .code button:hover {
+  background-color: var(--bs-btn-hover-bg);
+}/*# sourceMappingURL=styles.css.map */
