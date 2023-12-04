@@ -1,160 +1,214 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif, FontAwesome;
+  font-family: "Kanit", sans-serif, FontAwesome;
 }
 
 /* Color Palette */
 body {
-  min-height: 100vh;
-  padding: 1em;
+  background-color: #011936;
 }
-body main, body .colors, body .color, body .direction, body .preview, body .code {
+body .navMenu {
+  text-align: center;
+  padding: 0.5rem;
+}
+body .navMenu .active {
+  color: #ED254E;
+  text-shadow: 0px 0px 8px rgb(237, 37, 78);
+}
+body .navMenu a {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0 1em;
+  border-right: 2px dotted #ED254E;
+  transition: all 0.2s ease-in-out;
+}
+body .navMenu a:last-child {
+  border-right: 0;
+}
+body .navMenu a:hover {
+  color: #ED254E;
+}
+body .container, body .colors, body .color, body .direction, body .preview, body .code {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 }
-body main section {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+body .container {
+  min-height: 90vh;
 }
-body main .card-container {
+body .container .card-container {
   width: auto;
-  max-width: 550px;
+  max-width: 575px;
+  min-width: 300px;
   height: auto;
   padding: 1em;
   border-radius: 10px;
   box-shadow: 0px 0px 5px 5px #465362;
   background-color: #C2EABD;
 }
-body main .card-container .card-title {
+body .container .card-container .card-title {
   width: 100%;
   display: inline-block;
   text-align: center;
-  text-transform: uppercase;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
-  letter-spacing: 1px;
-  color: #ED254E;
-  cursor: default;
+  color: #011936;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
-body main .card-container .colors { /* Color */
+body .container .card-container .colors {
   flex-wrap: nowrap;
   gap: 10px;
   text-align: center;
   margin: 10px 0 5px 0;
   border-radius: 5px;
-  padding: 0.5rem;
+  padding: 5px;
   background-color: #ED254E;
   border: 2px solid #011936;
 }
-body main .card-container .colors .color input[type=color] {
-  width: 75%;
+body .container .card-container .colors .color {
+  border-right: 2px dotted #011936;
+  padding-right: 10px;
+}
+body .container .card-container .colors .color:last-child {
+  border-right: 0;
+  padding-right: 0;
+}
+body .container .card-container .colors .color input[type=color] {
+  width: 50%;
   height: 25px;
   appearance: none;
-  -moz-appearance: none;
   -webkit-appearance: none;
-  background: none;
-  border: 2px solid white;
-  padding: 0;
+  -moz-appearance: none;
+  border: 0;
+  background: transparent;
+  transition: 0.25s;
   cursor: pointer;
 }
-body main .card-container .colors .color input[type=color]:hover {
-  animation: fa-bounce 1s ease-out infinite;
-  animation-iteration-count: 1;
-  --fa-bounce-height: 1;
+body .container .card-container .colors .color input[type=color]:hover {
+  scale: 1.05;
 }
-body main .card-container .colors .color input::-webkit-outer-spin-button, body main .card-container .colors .color input::-webkit-inner-spin-button {
+body .container .card-container .colors .color input[type=color]::-webkit-color-swatch {
+  border-radius: 5px;
+  border: 1px solid white;
+}
+body .container .card-container .colors .color input[type=color]::-moz-color-swatch {
+  border-radius: 5px;
+  border: 1px solid white;
+}
+body .container .card-container .colors .color input[type=range] {
+  width: 75%;
+  height: 25px;
+  cursor: pointer;
+}
+body .container .card-container .colors .color input::-webkit-outer-spin-button, body .container .card-container .colors .color input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-body main .card-container .colors .color input[type=number] {
-  width: 30px;
+body .container .card-container .colors .color input[type=number] {
+  width: 25px;
   height: 25px;
-  margin-left: auto;
+  margin-left: 5px;
   font-size: 10px;
   text-align: center;
-  letter-spacing: 1px;
   -webkit-appearance: none;
           appearance: none;
   -moz-appearance: textfield;
+  border-radius: 5px;
 }
-body main .card-container .colors .color input[type=range] {
-  cursor: pointer;
+body .container .card-container .colors .color span {
+  font-size: 9px;
+  color: white;
+  margin-left: 2.5px;
 }
-body main .card-container .colors .div-color3.disabled {
+body .container .card-container .colors .div-color3.disabled {
   pointer-events: none;
   opacity: 0.5;
 }
-body main .card-container .form-check { /* Color #3 Checkbox */
-  font-size: 13px;
-  padding-inline: 5px;
-  float: right;
-  margin: 0;
+body .container .card-container #reset {
+  width: 35%;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  height: 25px;
+  font-size: 12px;
+  line-height: 1;
+  background-color: #465362;
+  border-color: white;
+  border-radius: 5px !important;
+  margin-top: -8px;
 }
-body main .card-container .form-check input[type=checkbox] {
+body .container .card-container #reset:hover {
+  background-color: black;
+}
+body .container .card-container .form-check {
+  font-size: 14px;
+  float: right;
+}
+body .container .card-container .form-check input[type=checkbox] {
   border: 1px solid #011936;
   cursor: pointer;
   transition: 0.25s;
 }
-body main .card-container .form-check input[type=checkbox]:checked {
+body .container .card-container .form-check input[type=checkbox]:checked {
   background-color: #ED254E;
   border-color: #ED254E;
 }
-body main .card-container .form-check input[type=checkbox]:hover {
+body .container .card-container .form-check input[type=checkbox]:hover {
   box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.5);
 }
-body main .card-container .direction { /* Gradient Direction */
+body .container .card-container .direction {
   width: 100%;
   padding: 5px;
   border-radius: 5px;
-  border: 2px solid #011936;
   background-color: #F9DC5C;
   color: white;
+  border: 2px solid #011936;
 }
-body main .card-container .direction button {
+body .container .card-container .direction button {
   border: none;
 }
-body main .card-container .direction button:focus, body main .card-container .direction button:hover, body main .card-container .direction button:active {
+body .container .card-container .direction button:focus, body .container .card-container .direction button:hover, body .container .card-container .direction button:active {
   font-weight: bolder;
   color: #ED254E;
 }
-body main .card-container .direction .btn.active {
+body .container .card-container .direction .btn.active {
   color: #ED254E;
+  font-weight: bolder;
 }
-body main .card-container .direction .isRadial {
+body .container .card-container .direction .isRadial {
   border-radius: 0;
-  border-left: 1px solid;
+  border-left: 2px dotted #011936;
 }
-body main .card-container .preview { /* Gradient Preview */
-  width: 100%;
-  height: 100px;
-  margin: 10px 0;
+body .container .card-container .preview {
+  height: 200px;
+  margin: 5px 0;
   border-radius: 5px;
   border: 2px solid #011936;
 }
-body main .card-container .preview span {
+body .container .card-container .preview span {
   color: white;
   opacity: 0.5;
-  font-size: 14px;
-  font-weight: bold;
-  letter-spacing: 2px;
+  font-size: 16px;
+  letter-spacing: 1px;
   cursor: default;
 }
-body main .card-container .code { /* Gradient CSS Code */
+body .container .card-container .code {
   flex-wrap: nowrap;
 }
-body main .card-container .code .form-floating {
-  width: 90%;
+body .container .card-container .code .form-floating {
+  width: 100%;
 }
-body main .card-container .code .form-floating label {
-  font-size: 12px;
+body .container .card-container .code .form-floating label {
+  font-size: 14px;
 }
-body main .card-container .code .form-floating textarea {
+body .container .card-container .code .form-floating textarea {
   height: -moz-fit-content;
   height: fit-content;
   border-radius: 5px;
@@ -164,17 +218,17 @@ body main .card-container .code .form-floating textarea {
   cursor: copy;
   font-size: 14px;
 }
-body main .card-container .code .form-floating textarea::-moz-selection {
+body .container .card-container .code .form-floating textarea::-moz-selection {
   background: #F9DC5C;
 }
-body main .card-container .code .form-floating textarea::selection {
+body .container .card-container .code .form-floating textarea::selection {
   background: #F9DC5C;
 }
-body main .card-container .code button {
-  margin-left: 10px;
+body .container .card-container .code button {
+  margin-left: 5px;
   background-color: #ED254E;
   border-color: #ED254E;
 }
-body main .card-container .code button:hover {
+body .container .card-container .code button:hover {
   background-color: var(--bs-btn-hover-bg);
 }/*# sourceMappingURL=styles.css.map */
