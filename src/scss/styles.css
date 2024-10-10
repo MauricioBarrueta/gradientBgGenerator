@@ -33,7 +33,7 @@ body .navMenu a:last-child {
 body .navMenu a:hover {
   color: #ED254E;
 }
-body .container, body .colors, body .color, body .direction, body .preview, body .code {
+body .container, body .color-options, body .color, body .form-check, body .direction, body .preview, body .code {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,10 +41,11 @@ body .container, body .colors, body .color, body .direction, body .preview, body
 }
 body .container {
   min-height: 90vh;
+  gap: 15px;
 }
-body .container .card-container {
+body .container .card-container, body .container .card-prev {
   width: auto;
-  max-width: 575px;
+  max-width: 600px;
   min-width: 300px;
   height: auto;
   padding: 1em;
@@ -52,7 +53,7 @@ body .container .card-container {
   box-shadow: 0px 0px 5px 5px #465362;
   background-color: #C2EABD;
 }
-body .container .card-container .card-title {
+body .container .card-container .card-title, body .container .card-prev .card-title {
   width: 100%;
   display: inline-block;
   text-align: center;
@@ -63,58 +64,77 @@ body .container .card-container .card-title {
      -moz-user-select: none;
           user-select: none;
 }
-body .container .card-container .colors {
-  flex-wrap: nowrap;
-  gap: 10px;
+body .container .card-container .color-options, body .container .card-prev .color-options {
+  margin-top: 5px;
   text-align: center;
-  margin: 10px 0 5px 0;
-  border-radius: 5px;
-  padding: 5px;
-  background-color: #ED254E;
-  border: 2px solid #011936;
 }
-body .container .card-container .colors .color {
-  border-right: 2px dotted #011936;
-  padding-right: 10px;
-}
-body .container .card-container .colors .color:last-child {
-  border-right: 0;
-  padding-right: 0;
-}
-body .container .card-container .colors .color input[type=color] {
+body .container .card-container .color-options .colors, body .container .card-prev .color-options .colors {
   width: 50%;
+  padding: 5px;
+  border: 2px solid #011936;
+  border-bottom-style: dotted;
+  background-color: #ED254E;
+  color: white;
+}
+body .container .card-container .color-options .colors:first-child, body .container .card-prev .color-options .colors:first-child {
+  border-radius: 5px 0 0 0;
+  border-right: 0;
+}
+body .container .card-container .color-options .colors:last-child, body .container .card-prev .color-options .colors:last-child {
+  border-radius: 0 5px 0 0;
+  border-left: 2px dotted #011936;
+}
+body .container .card-container .color-options .colors .color, body .container .card-container .color-options .colors .form-check, body .container .card-prev .color-options .colors .color, body .container .card-prev .color-options .colors .form-check {
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+body .container .card-container .color-options .colors .color:last-child, body .container .card-container .color-options .colors .color .form-check, body .container .card-container .color-options .colors .form-check:last-child, body .container .card-container .color-options .colors .form-check .form-check, body .container .card-prev .color-options .colors .color:last-child, body .container .card-prev .color-options .colors .color .form-check, body .container .card-prev .color-options .colors .form-check:last-child, body .container .card-prev .color-options .colors .form-check .form-check {
+  border-top: 2px dotted #011936;
+  margin-bottom: 5px;
+}
+body .container .card-container .color-options .colors .color .form-label, body .container .card-container .color-options .colors .form-check .form-label, body .container .card-prev .color-options .colors .color .form-label, body .container .card-prev .color-options .colors .form-check .form-label {
+  width: 100%;
+  display: inline-block;
+  font-size: 15px;
+  margin-bottom: 0;
+}
+body .container .card-container .color-options .colors .color input, body .container .card-container .color-options .colors .form-check input, body .container .card-prev .color-options .colors .color input, body .container .card-prev .color-options .colors .form-check input {
   height: 25px;
+}
+body .container .card-container .color-options .colors .color input[type=color], body .container .card-container .color-options .colors .form-check input[type=color], body .container .card-prev .color-options .colors .color input[type=color], body .container .card-prev .color-options .colors .form-check input[type=color] {
+  width: 40px;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   border: 0;
+  margin-right: 5px;
   background: transparent;
   transition: 0.25s;
   cursor: pointer;
 }
-body .container .card-container .colors .color input[type=color]:hover {
+body .container .card-container .color-options .colors .color input[type=color]:hover, body .container .card-container .color-options .colors .form-check input[type=color]:hover, body .container .card-prev .color-options .colors .color input[type=color]:hover, body .container .card-prev .color-options .colors .form-check input[type=color]:hover {
   scale: 1.05;
 }
-body .container .card-container .colors .color input[type=color]::-webkit-color-swatch {
+body .container .card-container .color-options .colors .color input[type=color]::-webkit-color-swatch, body .container .card-container .color-options .colors .form-check input[type=color]::-webkit-color-swatch, body .container .card-prev .color-options .colors .color input[type=color]::-webkit-color-swatch, body .container .card-prev .color-options .colors .form-check input[type=color]::-webkit-color-swatch {
   border-radius: 5px;
   border: 1px solid white;
 }
-body .container .card-container .colors .color input[type=color]::-moz-color-swatch {
+body .container .card-container .color-options .colors .color input[type=color]::-moz-color-swatch, body .container .card-container .color-options .colors .form-check input[type=color]::-moz-color-swatch, body .container .card-prev .color-options .colors .color input[type=color]::-moz-color-swatch, body .container .card-prev .color-options .colors .form-check input[type=color]::-moz-color-swatch {
   border-radius: 5px;
   border: 1px solid white;
 }
-body .container .card-container .colors .color input[type=range] {
-  width: 75%;
-  height: 25px;
+body .container .card-container .color-options .colors .color input[type=range], body .container .card-container .color-options .colors .form-check input[type=range], body .container .card-prev .color-options .colors .color input[type=range], body .container .card-prev .color-options .colors .form-check input[type=range] {
+  width: 50%;
   cursor: pointer;
 }
-body .container .card-container .colors .color input::-webkit-outer-spin-button, body .container .card-container .colors .color input::-webkit-inner-spin-button {
+body .container .card-container .color-options .colors .color input::-webkit-outer-spin-button, body .container .card-container .color-options .colors .color input::-webkit-inner-spin-button, body .container .card-container .color-options .colors .form-check input::-webkit-outer-spin-button, body .container .card-container .color-options .colors .form-check input::-webkit-inner-spin-button, body .container .card-prev .color-options .colors .color input::-webkit-outer-spin-button, body .container .card-prev .color-options .colors .color input::-webkit-inner-spin-button, body .container .card-prev .color-options .colors .form-check input::-webkit-outer-spin-button, body .container .card-prev .color-options .colors .form-check input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-body .container .card-container .colors .color input[type=number] {
+body .container .card-container .color-options .colors .color input[type=number], body .container .card-container .color-options .colors .form-check input[type=number], body .container .card-prev .color-options .colors .color input[type=number], body .container .card-prev .color-options .colors .form-check input[type=number] {
   width: 25px;
-  height: 25px;
   margin-left: 5px;
   font-size: 10px;
   text-align: center;
@@ -123,94 +143,103 @@ body .container .card-container .colors .color input[type=number] {
   -moz-appearance: textfield;
   border-radius: 5px;
 }
-body .container .card-container .colors .color span {
+body .container .card-container .color-options .colors .color span, body .container .card-container .color-options .colors .form-check span, body .container .card-prev .color-options .colors .color span, body .container .card-prev .color-options .colors .form-check span {
   font-size: 9px;
   color: white;
   margin-left: 2.5px;
 }
-body .container .card-container .colors .div-color3.disabled {
+body .container .card-container .color-options .colors .div-color3.disabled, body .container .card-prev .color-options .colors .div-color3.disabled {
   pointer-events: none;
   opacity: 0.5;
 }
-body .container .card-container #reset {
-  width: 35%;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
-  height: 25px;
+body .container .card-container .color-options .colors .form-check, body .container .card-prev .color-options .colors .form-check {
+  height: 54.5px;
+  justify-content: center;
+  gap: 10px;
+  padding-left: 0;
+  margin-bottom: 0 !important;
   font-size: 12px;
-  line-height: 1;
-  background-color: #465362;
-  border-color: white;
-  border-radius: 5px !important;
-  margin-top: -8px;
 }
-body .container .card-container #reset:hover {
-  background-color: black;
+body .container .card-container .color-options .colors .form-check label, body .container .card-prev .color-options .colors .form-check label {
+  height: 25px;
+  line-height: 2;
 }
-body .container .card-container .form-check {
-  font-size: 14px;
-  float: right;
-}
-body .container .card-container .form-check input[type=checkbox] {
+body .container .card-container .color-options .colors .form-check input[type=checkbox], body .container .card-prev .color-options .colors .form-check input[type=checkbox] {
+  width: 45px;
+  height: 20px;
+  margin: 0;
   border: 1px solid #011936;
   cursor: pointer;
-  transition: 0.25s;
+  transition: 0.2s;
 }
-body .container .card-container .form-check input[type=checkbox]:checked {
-  background-color: #ED254E;
-  border-color: #ED254E;
-}
-body .container .card-container .form-check input[type=checkbox]:hover {
+body .container .card-container .color-options .colors .form-check input[type=checkbox]:hover, body .container .card-prev .color-options .colors .form-check input[type=checkbox]:hover {
   box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.5);
 }
-body .container .card-container .direction {
+body .container .card-container .reset-button, body .container .card-prev .reset-button {
+  background-color: #ED254E;
+  border: 2px solid #011936;
+  border-top: 0;
+  border-radius: 0 0 5px 5px;
+  padding: 5px;
+  text-align: center;
+}
+body .container .card-container .reset-button #reset, body .container .card-prev .reset-button #reset {
+  background-color: #465362;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+body .container .card-container .reset-button #reset:hover, body .container .card-prev .reset-button #reset:hover {
+  background-color: black;
+}
+body .container .card-container .direction, body .container .card-prev .direction {
   width: 100%;
   padding: 5px;
   border-radius: 5px;
-  background-color: #F9DC5C;
-  color: white;
+  margin: 5px 0;
+  background-color: #ED254E;
   border: 2px solid #011936;
 }
-body .container .card-container .direction button {
+body .container .card-container .direction button, body .container .card-prev .direction button {
   border: none;
+  color: white;
 }
-body .container .card-container .direction button:focus, body .container .card-container .direction button:hover, body .container .card-container .direction button:active {
+body .container .card-container .direction button:focus, body .container .card-container .direction button:hover, body .container .card-container .direction button:active, body .container .card-prev .direction button:focus, body .container .card-prev .direction button:hover, body .container .card-prev .direction button:active {
   font-weight: bolder;
-  color: #ED254E;
+  color: #465362;
 }
-body .container .card-container .direction .btn.active {
-  color: #ED254E;
+body .container .card-container .direction .btn.active, body .container .card-prev .direction .btn.active {
+  color: #000;
   font-weight: bolder;
 }
-body .container .card-container .direction .isRadial {
+body .container .card-container .direction .isRadial, body .container .card-prev .direction .isRadial {
   border-radius: 0;
   border-left: 2px dotted #011936;
 }
-body .container .card-container .preview {
-  height: 200px;
+body .container .card-container .preview, body .container .card-prev .preview {
+  height: 237px;
   margin: 5px 0;
   border-radius: 5px;
   border: 2px solid #011936;
 }
-body .container .card-container .preview span {
+body .container .card-container .preview span, body .container .card-prev .preview span {
   color: white;
   opacity: 0.5;
   font-size: 16px;
   letter-spacing: 1px;
   cursor: default;
 }
-body .container .card-container .code {
+body .container .card-container .code, body .container .card-prev .code {
   flex-wrap: nowrap;
+  margin: 5px 0 auto;
 }
-body .container .card-container .code .form-floating {
+body .container .card-container .code .form-floating, body .container .card-prev .code .form-floating {
   width: 100%;
 }
-body .container .card-container .code .form-floating label {
+body .container .card-container .code .form-floating label, body .container .card-prev .code .form-floating label {
   font-size: 14px;
 }
-body .container .card-container .code .form-floating textarea {
-  height: -moz-fit-content;
-  height: fit-content;
+body .container .card-container .code .form-floating textarea, body .container .card-prev .code .form-floating textarea {
+  height: 100px;
   border-radius: 5px;
   border: 2px solid #011936;
   overflow: auto;
@@ -218,17 +247,17 @@ body .container .card-container .code .form-floating textarea {
   cursor: copy;
   font-size: 14px;
 }
-body .container .card-container .code .form-floating textarea::-moz-selection {
+body .container .card-container .code .form-floating textarea::-moz-selection, body .container .card-prev .code .form-floating textarea::-moz-selection {
   background: #F9DC5C;
 }
-body .container .card-container .code .form-floating textarea::selection {
+body .container .card-container .code .form-floating textarea::selection, body .container .card-prev .code .form-floating textarea::selection {
   background: #F9DC5C;
 }
-body .container .card-container .code button {
+body .container .card-container .code button, body .container .card-prev .code button {
   margin-left: 5px;
   background-color: #ED254E;
   border-color: #ED254E;
 }
-body .container .card-container .code button:hover {
+body .container .card-container .code button:hover, body .container .card-prev .code button:hover {
   background-color: var(--bs-btn-hover-bg);
 }/*# sourceMappingURL=styles.css.map */
