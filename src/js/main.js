@@ -65,9 +65,10 @@ resetButton.addEventListener('click', () => {
 })
 
 const resetValues = () => {
-    clrRange1.value = clrRangeValue1.value = 0, clrRange2.value = clrRangeValue2.value = 75, clrRange3.value = clrRangeValue3.value = 100  
-    color1.value = '#ED254E', color2.value = '#465362', color3.value = '#000000'
+    clrRange1.value = clrRangeValue1.value = 50, clrRange2.value = clrRangeValue2.value = 100, clrRange3.value = clrRangeValue3.value = 100  
+    color1.value = '#F9DC5C', color2.value = '#FFFFFF', color3.value = '#000000'
     isThirdColorChecked.checked = false
+    getGradientDirection('to bottom', document.querySelector('.def'))
 }
 
 const copyCodeButton = document.getElementById('copy-code')
