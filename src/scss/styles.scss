@@ -29,7 +29,7 @@ body {
     .container {
         min-height: 90vh; gap: 15px;             
         .card-container, .card-prev {
-            width: auto; max-width: 600px; min-width: 300px; height: auto; 
+            width: auto; max-width: 600px; min-width: 300px; height: 363.5px; 
             padding: 1em; border-radius: 10px; box-shadow: 0px 0px 5px 5px #465362;
             background-color: $teaGreen;
 
@@ -67,19 +67,19 @@ body {
                             &::-moz-color-swatch { border-radius: 5px; border: 1px solid white; }
                         }
                         input[type = range] { width: 50%; cursor: pointer; }  
-                        input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }                     
+                        input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
                         input[type = number] {
-                            width: 25px; margin-left: 5px;
-                            font-size: 10px; text-align: center;                     
-                            appearance: none; -moz-appearance: textfield; border-radius: 5px;
-                        }
+                            width: 25px; height: 25px;
+                            appearance: none; -moz-appearance: textfield; border: 0; margin: 0 !important; border-radius: 5px !important;
+                            text-align: center; font-size: 9px;
+                        }  
                         span { font-size: 9px; color: white; margin-left: 2.5px; } 
                     }
                     .div-color3.disabled { pointer-events: none; opacity: .5; }      
                     .form-check {    
                         height: 54.5px; justify-content: center; gap: 10px;
                         padding-left: 0; margin-bottom: 0 !important; font-size: 12px; 
-                        label { height: 25px; line-height: 2; }
+                        label { height: 25px; font-size: 13px; line-height: 1.85; }
                         input[type = checkbox] { 
                             width: 45px; height: 20px; margin: 0; border: 1px solid $oxfordBlue;
                             cursor: pointer; transition: 0.2s;
@@ -101,12 +101,16 @@ body {
                 width: 100%;
                 padding: 5px; border-radius: 5px; margin: 5px 0;
                 background-color: $redCrayola; border: 2px solid $oxfordBlue; 
+                .form-label {
+                    width: 100%;
+                    font-size: 15px; text-align: center; color: white;
+                    margin-bottom: 0; padding-bottom: 5px; border-bottom: 2px dotted $oxfordBlue;
+                }
                 button {
                     border: none; color: white;
                     &:focus, &:hover, &:active { font-weight: bolder; color: $Charcoal; }
                 }
                 .btn.active { color: #000; font-weight: bolder; }
-                .isRadial { border-radius: 0; border-left: 2px dotted $oxfordBlue; }                
             }
             .preview { 
                 height: 237px;
@@ -122,7 +126,7 @@ body {
                     width: 100%;
                     label { font-size: 14px; }
                     textarea {                    
-                        height: 100px;
+                        height: 130px;
                         border-radius: 5px; border: 2px solid $oxfordBlue;
                         overflow: auto; resize: none; cursor: copy;
                         font-size: 14px; 
