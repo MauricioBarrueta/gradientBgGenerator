@@ -3,6 +3,6 @@
 
 🇺🇸 Website where it's possible to customize the values of two types of 'Gradient Background' effect, linear and radial, you can choose between 2 to 3 colors, as well as the 
    direction from where the effect will start, at the same time the preview of the style is shown and also the CSS code to copy it. 
+   
 
-
-![cssGradient](https://github.com/user-attachments/assets/3a67f104-c01e-4cea-afab-16349d975bba)
+![cssGradient](https://github.com/user-attachments/assets/d6712581-67de-4ee2-bc3f-4e180d3d8ff0)
