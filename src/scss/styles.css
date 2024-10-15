@@ -47,7 +47,7 @@ body .container .card-container, body .container .card-prev {
   width: auto;
   max-width: 600px;
   min-width: 300px;
-  height: auto;
+  height: 363.5px;
   padding: 1em;
   border-radius: 10px;
   box-shadow: 0px 0px 5px 5px #465362;
@@ -135,13 +135,15 @@ body .container .card-container .color-options .colors .color input::-webkit-out
 }
 body .container .card-container .color-options .colors .color input[type=number], body .container .card-container .color-options .colors .form-check input[type=number], body .container .card-prev .color-options .colors .color input[type=number], body .container .card-prev .color-options .colors .form-check input[type=number] {
   width: 25px;
-  margin-left: 5px;
-  font-size: 10px;
-  text-align: center;
+  height: 25px;
   -webkit-appearance: none;
           appearance: none;
   -moz-appearance: textfield;
-  border-radius: 5px;
+  border: 0;
+  margin: 0 !important;
+  border-radius: 5px !important;
+  text-align: center;
+  font-size: 9px;
 }
 body .container .card-container .color-options .colors .color span, body .container .card-container .color-options .colors .form-check span, body .container .card-prev .color-options .colors .color span, body .container .card-prev .color-options .colors .form-check span {
   font-size: 9px;
@@ -162,7 +164,8 @@ body .container .card-container .color-options .colors .form-check, body .contai
 }
 body .container .card-container .color-options .colors .form-check label, body .container .card-prev .color-options .colors .form-check label {
   height: 25px;
-  line-height: 2;
+  font-size: 13px;
+  line-height: 1.85;
 }
 body .container .card-container .color-options .colors .form-check input[type=checkbox], body .container .card-prev .color-options .colors .form-check input[type=checkbox] {
   width: 45px;
@@ -199,6 +202,15 @@ body .container .card-container .direction, body .container .card-prev .directio
   background-color: #ED254E;
   border: 2px solid #011936;
 }
+body .container .card-container .direction .form-label, body .container .card-prev .direction .form-label {
+  width: 100%;
+  font-size: 15px;
+  text-align: center;
+  color: white;
+  margin-bottom: 0;
+  padding-bottom: 5px;
+  border-bottom: 2px dotted #011936;
+}
 body .container .card-container .direction button, body .container .card-prev .direction button {
   border: none;
   color: white;
@@ -210,10 +222,6 @@ body .container .card-container .direction button:focus, body .container .card-c
 body .container .card-container .direction .btn.active, body .container .card-prev .direction .btn.active {
   color: #000;
   font-weight: bolder;
-}
-body .container .card-container .direction .isRadial, body .container .card-prev .direction .isRadial {
-  border-radius: 0;
-  border-left: 2px dotted #011936;
 }
 body .container .card-container .preview, body .container .card-prev .preview {
   height: 237px;
@@ -239,7 +247,7 @@ body .container .card-container .code .form-floating label, body .container .car
   font-size: 14px;
 }
 body .container .card-container .code .form-floating textarea, body .container .card-prev .code .form-floating textarea {
-  height: 100px;
+  height: 130px;
   border-radius: 5px;
   border: 2px solid #011936;
   overflow: auto;

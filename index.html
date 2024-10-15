@@ -30,7 +30,7 @@
             <div class="color-options">
                 <div class="colors">
                     <div class="color">
-                        <label class="form-label" for="color1">Primer color:</label>
+                        <label class="form-label" for="color1">#1 Color:</label>
                         <input type="color" id="color1" class="color-1" title="Color #1">
                         <input type="range" class="form-range" id="clr1" min="0" max="100" step="1" value="0" oninput="range1Value.value=clr1.value">
                         <input type="number" id="range1Value" oninput="clr1.value=range1Value.value"><span>%</span>
@@ -43,13 +43,13 @@
                 </div>  
                 <div class="colors">
                     <div class="color">
-                        <label class="form-label" for="color2">Segundo color:</label>
+                        <label class="form-label" for="color2">#2 Color:</label>
                         <input type="color" id="color2" class="color-2" title="Color #2">
                         <input type="range" class="form-range" id="clr2" min="0" max="100" step="1" value="50" oninput="range2Value.value=clr2.value">
                         <input type="number" id="range2Value" oninput="clr2.value=range2Value.value"><span>%</span>
                     </div>                   
                     <div class="color div-color3">
-                        <label class="form-label" for="color3">Tercer color:</label>
+                        <label class="form-label" for="color3">#3 Color:</label>
                         <input type="color" id="color3" class="color-3" title="Color #3">
                         <input type="range" class="form-range" id="clr3" min="0" max="100" step="1" value="100" oninput="range3Value.value=clr3.value">
                         <input type="number" id="range3Value" oninput="clr3.value=range3Value.value"><span>%</span>
@@ -59,21 +59,17 @@
             <div class="reset-button">
                 <button class="btn btn-dark" id="reset">Restablecer valores &#xf2f9;</button>
             </div> 
-             
-
-           
-
             <div class="code">
                 <div class="form-floating">
-                    <textarea class="form-control" id="css-code"></textarea>
+                    <textarea class="form-control" id="css-code" spellcheck="false"></textarea>
                     <label for="css-code">El código CSS se genera automáticamente:</label>
                 </div>
                 <button class="btn btn-danger" id="copy-code" title="Copiar">&#xf0c5;</button>
             </div>
-        </div>  
-        
+        </div>          
         <div class="card-prev">
             <div class="direction">
+                <label class="form-label">Direction:</label>
                 <button class="btn" onclick="getGradientDirection('to right', this)" title="to right">&#xf061;</button> 
                 <button class="btn fa-rotate-by" onclick="getGradientDirection('to bottom right', this)"
                     style="--fa-rotate-angle: 225deg;" title="to bottom right">&#xf060;</button>
