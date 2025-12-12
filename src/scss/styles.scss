@@ -23,13 +23,13 @@ body {
         }
     }
 
-    .container, .color-options, .color, .form-check, .direction, .preview, .code {
+    .container, .color-options, .input-group, .direction, .preview, .code {
         display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
     }
     .container {
-        min-height: 90vh; gap: 15px;             
+        min-height: 90vh; gap: 8px;             
         .card-container, .card-prev {
-            width: auto; max-width: 600px; min-width: 300px; height: 363.5px; 
+            width: 650px; 
             padding: 1em; border-radius: 10px; box-shadow: 0px 0px 5px 5px #465362;
             background-color: $teaGreen;
 
@@ -40,93 +40,88 @@ body {
             }       
             
             .color-options {                
-                margin-top: 5px; text-align: center;         
-                .colors {                
-                    width: 50%;
-                    padding: 5px; border: 2px solid $oxfordBlue; border-bottom-style: dotted;
-                    background-color: $redCrayola; color: white;
+                flex-direction: row; 
+                margin: 5px 0 auto;
+
+                .column {                
+                    width: 50%; height: 142px;
+                    padding: 1em 0.5rem 0.5rem 0.5rem; border: 2px solid $oxfordBlue; border-bottom: 0; 
+                    background-color: $redCrayola; color: white; text-align: center;
+                    
                     &:first-child { border-radius: 5px 0 0 0; border-right: 0; }
                     &:last-child { border-radius: 0 5px 0 0; border-left: 2px dotted $oxfordBlue; }
     
-                    .color, .form-check { 
-                        margin-bottom: 10px; 
-                        align-items: center; justify-content: space-evenly; flex-wrap: wrap;
-                        &:last-child, .form-check { border-top: 2px dotted $oxfordBlue; margin-bottom: 5px; }
+                    .input-group { 
+                        display: flex; flex-direction: column; justify-content: center; margin-bottom: 5px; 
+
+                        &:last-child { border-top: 2px dotted $oxfordBlue; padding: 5px 0 0 0; }
+                        
                         .form-label { 
                             width: 100%; display: inline-block;
                             font-size: 15px; margin-bottom: 0;
+                            small { 
+                                font-size: 9px; color: $naplesYellow; 
+                                margin: 6px 0 0 8px !important; cursor: help;
+                            }
                         }
-                        input { height: 25px; }
+
                         input[type = color] {   
-                            width: 40px;                        
-                            appearance: none; -webkit-appearance: none; -moz-appearance: none;
-                            border: 0; margin-right: 5px; background: transparent; transition: 0.25s;
+                            width: 50px; height: 25px;                        
+                            border: 0; border-radius: 5px; background: transparent; transition: 0.25s;
                             cursor: pointer;
                             &:hover { scale: 1.05; }
-                            &::-webkit-color-swatch { border-radius: 5px; border: 1px solid white; }
-                            &::-moz-color-swatch { border-radius: 5px; border: 1px solid white; }
+                            &::-webkit-color-swatch { border-radius: 5px; border: 1px solid $oxfordBlue; }
+                            &::-moz-color-swatch { border-radius: 5px; border: 1px solid $oxfordBlue; }
                         }
-                        input[type = range] { width: 50%; cursor: pointer; }  
+
+                        .input-row { display: flex; align-items: center; width: 100%; gap: 5px; }
+                        input[type = range] { 
+                            flex: 1; height: 25px; cursor: pointer; 
+                        }  
+
                         input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
                         input[type = number] {
                             width: 25px; height: 25px;
                             appearance: none; -moz-appearance: textfield; border: 0; margin: 0 !important; border-radius: 5px !important;
                             text-align: center; font-size: 9px;
                         }  
-                        span { font-size: 9px; color: white; margin-left: 2.5px; } 
+
+                        span { font-size: 10px; line-height: 2; }
                     }
-                    .div-color3.disabled { pointer-events: none; opacity: .5; }      
-                    .form-check {    
-                        height: 54.5px; justify-content: center; gap: 10px;
-                        padding-left: 0; margin-bottom: 0 !important; font-size: 12px; 
-                        label { height: 25px; font-size: 13px; line-height: 1.85; }
-                        input[type = checkbox] { 
-                            width: 45px; height: 20px; margin: 0; border: 1px solid $oxfordBlue;
-                            cursor: pointer; transition: 0.2s;
-                            &:hover { box-shadow:  0px 0px 5px 2px rgba(0, 0, 0, 0.5); }                    
-                        }                   
-                    }    
+
+                    .direction { 
+                        width: 100%;
+                        .input-row {
+                            gap: 0; justify-content: center; flex-wrap: wrap;
+                            button {
+                                font-size: 12px;
+                                padding: 0.5rem; border: none; color: white;
+                                &:focus, &:hover, &:active { font-weight: bolder; color: $naplesYellow; }
+                            }
+                            .btn.active { color: $oxfordBlue; font-weight: bolder; }
+                        }                        
+                    }
                 }
             }
+            
             .reset-button {
                 background-color: $redCrayola; border: 2px solid $oxfordBlue; border-top: 0; 
-                border-radius: 0 0 5px 5px; padding: 5px; text-align: center;
+                border-radius: 0 0 5px 5px; padding: 5px; text-align: center; border-top: 2px dotted $oxfordBlue;
                 #reset {      
                     background-color: $Charcoal;
                     padding: 5px 10px; font-size: 12px;                     
-                    &:hover { background-color: black; }                
+                    &:hover { background-color: black; }  
+                    i { font-size: 10px; }             
                 }
             }
-            .direction { 
-                width: 100%;
-                padding: 5px; border-radius: 5px; margin: 5px 0;
-                background-color: $redCrayola; border: 2px solid $oxfordBlue; 
-                .form-label {
-                    width: 100%;
-                    font-size: 15px; text-align: center; color: white;
-                    margin-bottom: 0; padding-bottom: 5px; border-bottom: 2px dotted $oxfordBlue;
-                }
-                button {
-                    border: none; color: white;
-                    &:focus, &:hover, &:active { font-weight: bolder; color: $Charcoal; }
-                }
-                .btn.active { color: #000; font-weight: bolder; }
-            }
-            .preview { 
-                height: 237px;
-                margin: 5px 0; border-radius: 5px; border: 2px solid $oxfordBlue; 
-                span { 
-                    color: white; opacity: .5;
-                    font-size: 16px; letter-spacing: 1px; cursor: default;
-                }
-            }
+
             .code { 
-                flex-wrap: nowrap; margin: 5px 0 auto; 
+                flex-wrap: nowrap; margin: 10px 0 auto; 
                 .form-floating {
                     width: 100%;
                     label { font-size: 14px; }
                     textarea {                    
-                        height: 130px;
+                        height: 115px;
                         border-radius: 5px; border: 2px solid $oxfordBlue;
                         overflow: auto; resize: none; cursor: copy;
                         font-size: 14px; 
@@ -138,7 +133,19 @@ body {
                     background-color: $redCrayola; border-color: $redCrayola;
                     &:hover { background-color: var(--bs-btn-hover-bg); }
                 }                
-            }
+            }                       
+        }
+
+        .card-prev { 
+            width: 350px;            
+            .preview { 
+                height: 250px;
+                border-radius: 5px; border: 2px solid $oxfordBlue; 
+                span { 
+                    color: $oxfordBlue; opacity: .5;
+                    font-size: 18px; letter-spacing: 1px; cursor: default;
+                }
+            } 
         }
     }
 }

@@ -1,8 +1,7 @@
-🇲🇽 Sitio web que permite personalizar los valores de dos tipos de efecto 'Gradient Background', linear y radial, se puede elegir entre 2 a 3 colores, además de la dirección 
-   desde donde iniciará el efecto, al mismo tiempo se va mostrando la vista previa del estilo así como también el código CSS para copiarlo. 
+🇲🇽 Sitio web desarrollado con JavaScript, SCSS y Bootstrap, publicado mediante GitHub Pages.
 
-🇺🇸 Website where it's possible to customize the values of two types of 'Gradient Background' effect, linear and radial, you can choose between 2 to 3 colors, as well as the 
-   direction from where the effect will start, at the same time the preview of the style is shown and also the CSS code to copy it. 
+🇺🇸 Website developed with JavaScript, SCSS and Bootstrap, published via GitHub Pages.
+
+🔗 https://mauriciobarrueta.github.io/gradientBgGenerator/
    
-
-![cssGradient](https://github.com/user-attachments/assets/d6712581-67de-4ee2-bc3f-4e180d3d8ff0)
+![gradient](https://github.com/user-attachments/assets/c50e4839-fad7-48ea-863c-591fc8ddd261)
