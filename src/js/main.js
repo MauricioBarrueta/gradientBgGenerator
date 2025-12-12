@@ -4,11 +4,10 @@ const clrRange1 = document.getElementById('clr1'), clrRangeValue1 = document.get
     clrRange3 = document.getElementById('clr3'), clrRangeValue3 = document.getElementById('range3Value')
 
 const pageBody = document.querySelector('body'), gradientPreview = document.querySelector('.preview'),
-    isRadialBtnActive = document.querySelector('.isRadial'), resetButton = document.getElementById('reset'), divColor3 = document.querySelector('.div-color3')
+    isRadialBtnActive = document.querySelector('.isRadial'), resetButton = document.getElementById('reset')
 let gradientDefaultDirection = 'to bottom', cssCodeText = document.getElementById("css-code")
 
 window.onload = () => {
-    divColor3.classList.add('disabled')
     resetValues()
     generateLinearGradientCode()
 }
@@ -25,39 +24,29 @@ const getGradientDirection = (direction, clickedBtn) => {
     isRadialBtnActive.classList.contains('active') ? generateRadialGradientCode() : generateLinearGradientCode()    
 }
 
-const isThirdColorChecked = document.getElementById('thirdColorEnabled')
 /* Se genera el código y se aplican los estilos para la vista previa de 'linear-gradient' */
 const generateLinearGradientCode = () => {
-    isThirdColorChecked.checked ? (color3Value = `, ${color3.value.toUpperCase()} ${clrRange3.value}%`, divColor3.classList.remove('disabled')) 
-        : (color3Value = '', divColor3.classList.add('disabled'))
+    let linearGradientCode = `linear-gradient(${gradientDefaultDirection}, ${color1.value.toUpperCase()} ${clrRange1.value}%, ${color2.value.toUpperCase()} ${clrRange2.value}%, ${color3.value.toUpperCase()} ${clrRange3.value}%)`
 
-    let linearGradientCode = `linear-gradient(${gradientDefaultDirection}, ${color1.value.toUpperCase()} ${clrRange1.value}%, ${color2.value.toUpperCase()} ${clrRange2.value}%${color3Value})`    
     cssCodeText.value = `background: ${color1.value.toUpperCase()};\nbackground: ${linearGradientCode};`
     gradientPreview.style.backgroundImage = linearGradientCode
 }
 
 /* Se genera el código y se aplican los estilos para la vista previa de 'radial-gradient' */
-const generateRadialGradientCode = () => {
-    isThirdColorChecked.checked ? (color3Value = `, ${color3.value.toUpperCase()} ${clrRange3.value}%`, divColor3.classList.remove('disabled')) 
-        : (color3Value = '', divColor3.classList.add('disabled'))
-    
-    let radialGradientCode = `radial-gradient(${gradientDefaultDirection}, ${color1.value.toUpperCase()} ${clrRange1.value}%, ${color2.value.toUpperCase()} ${clrRange2.value}%${color3Value})`
+const generateRadialGradientCode = () => {    
+    let radialGradientCode = `radial-gradient(${gradientDefaultDirection}, ${color1.value.toUpperCase()} ${clrRange1.value}%, ${color2.value.toUpperCase()} ${clrRange2.value}%, ${color3.value.toUpperCase()} ${clrRange3.value}%)`
+
     cssCodeText.value = `background: ${color1.value.toUpperCase()};\nbackground: ${radialGradientCode};`
     gradientPreview.style.backgroundImage = radialGradientCode
 }
 
 /* Se llama al evento 'input' cada que el valor de los rangos cambia, también verifica cuál de las funciones se llamará */
-const colorInputs = document.querySelectorAll('.colors input')
+const colorInputs = document.querySelectorAll('.column input')
 colorInputs.forEach(element => {
     element.addEventListener('input', () => {   
         isRadialBtnActive.classList.contains('active') ? generateRadialGradientCode() : generateLinearGradientCode()  
     })
 });
-
-/* Llama a la función, dependiendo cúal botón esta activo, cada que el estado del checkbox cambia */
-isThirdColorChecked.addEventListener('change', () => {
-    isRadialBtnActive.classList.contains('active') ? generateRadialGradientCode() : generateLinearGradientCode()  
-})
 
 resetButton.addEventListener('click', () => { 
     resetValues() 
@@ -65,9 +54,8 @@ resetButton.addEventListener('click', () => {
 })
 
 const resetValues = () => {
-    clrRange1.value = clrRangeValue1.value = 50, clrRange2.value = clrRangeValue2.value = 100, clrRange3.value = clrRangeValue3.value = 100  
+    clrRange1.value = clrRangeValue1.value = 0, clrRange2.value = clrRangeValue2.value = 100, clrRange3.value = clrRangeValue3.value = 100  
     color1.value = '#F9DC5C', color2.value = '#FFFFFF', color3.value = '#000000'
-    isThirdColorChecked.checked = false
     getGradientDirection('to bottom', document.querySelector('.def'))
 }
 

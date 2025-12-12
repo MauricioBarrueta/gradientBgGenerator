@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
     <link rel="stylesheet" href="src/scss/styles.css">
     <title>Style Generator: Gradient Background</title>
     <link rel="icon" type="image/x-icon" href="src/img/favicon.ico">
@@ -16,49 +16,68 @@
         <a href="https://mauriciobarrueta.github.io/textShadowGenerator/">Text Shadow</a>
         <a href="https://mauriciobarrueta.github.io/borderGenerator/">Border</a>
         <a href="https://mauriciobarrueta.github.io/borderRadiusGenerator/">Border Radius</a>
-        <a href="https://mauriciobarrueta.github.io/transformGenerator/">CSS Transform</a>
-        <a href="https://mauriciobarrueta.github.io/filterGenerator/">Image Filter</a>
-        <a class="active">CSS Gradient</a>
-        <a href="https://mauriciobarrueta.github.io/rgbaHexGenerator/">Color Picker</a>
+        <a href="https://mauriciobarrueta.github.io/transformGenerator/">Transform</a>
+        <a href="https://mauriciobarrueta.github.io/filterGenerator/">Filter</a>
+        <a class="active">Gradient</a>
+        <a href="https://mauriciobarrueta.github.io/rgbaHexGenerator/">Color</a>
         <a href="https://mauriciobarrueta.github.io/glassmorphismGenerator/">Glassmorphism</a>
       </nav>
 
     <div class="container">
         <div class="card-container">
-            <span class="card-title">Personaliza la transición de los colores dependiendo el tipo de Gradient:</span>
+            <span class="card-title">Personaliza los valores de la función gradient para la propiedad background</span>
 
             <div class="color-options">
-                <div class="colors">
-                    <div class="color">
-                        <label class="form-label" for="color1">#1 Color:</label>
-                        <input type="color" id="color1" class="color-1" title="Color #1">
-                        <input type="range" class="form-range" id="clr1" min="0" max="100" step="1" value="0" oninput="range1Value.value=clr1.value">
-                        <input type="number" id="range1Value" oninput="clr1.value=range1Value.value"><span>%</span>
+                <div class="column">
+                    <div class="input-group">
+                        <label class="form-label" for="color1">color<small title="núm. 1">&#xf05a;</small></label>
+                        <div class="input-row">
+                            <input type="color" id="color1" class="color-1">
+                            <input type="range" class="form-range" id="clr1" min="0" max="100" step="1" value="0" oninput="range1Value.value=clr1.value">
+                            <input type="number" id="range1Value" oninput="clr1.value=range1Value.value"><span>%</span>
+                        </div>                        
                     </div>
-                    <div class="form-check form-switch">
-                        <label class="form-check-label" for="thirdColorEnabled">2 colores</label>
-                        <input class="form-check-input" type="checkbox" value="" id="thirdColorEnabled">
-                        <label class="form-check-label" for="thirdColorEnabled">3 colores</label>
-                    </div>                                                       
-                </div>  
-                <div class="colors">
-                    <div class="color">
-                        <label class="form-label" for="color2">#2 Color:</label>
-                        <input type="color" id="color2" class="color-2" title="Color #2">
-                        <input type="range" class="form-range" id="clr2" min="0" max="100" step="1" value="50" oninput="range2Value.value=clr2.value">
-                        <input type="number" id="range2Value" oninput="clr2.value=range2Value.value"><span>%</span>
-                    </div>                   
-                    <div class="color div-color3">
-                        <label class="form-label" for="color3">#3 Color:</label>
-                        <input type="color" id="color3" class="color-3" title="Color #3">
-                        <input type="range" class="form-range" id="clr3" min="0" max="100" step="1" value="100" oninput="range3Value.value=clr3.value">
-                        <input type="number" id="range3Value" oninput="clr3.value=range3Value.value"><span>%</span>
+                    <div class="input-group">
+                        <label class="form-label" for="color3">color<small title="núm. 3">&#xf05a;</small></label>
+                        <div class="input-row">
+                            <input type="color" id="color3" class="color-3">
+                            <input type="range" class="form-range" id="clr3" min="0" max="100" step="1" value="100" oninput="range3Value.value=clr3.value">
+                            <input type="number" id="range3Value" oninput="clr3.value=range3Value.value"><span>%</span>
+                        </div>                        
                     </div> 
+                </div>  
+                <div class="column">
+                    <div class="input-group">
+                        <label class="form-label" for="color2">color<small title="núm. 2">&#xf05a;</small></label>
+                        <div class="input-row">
+                            <input type="color" id="color2" class="color-2">
+                            <input type="range" class="form-range" id="clr2" min="0" max="100" step="1" value="100" oninput="range2Value.value=clr2.value">
+                            <input type="number" id="range2Value" oninput="clr2.value=range2Value.value"><span>%</span>
+                        </div>                        
+                    </div>   
+                    <div class="input-group">
+                        <div class="direction">
+                            <label class="form-label">direction</label>
+                            <div class="input-row">
+                                <button class="btn" onclick="getGradientDirection('to right', this)" title="to right">&#xf061;</button> 
+                                <button class="btn fa-rotate-by" onclick="getGradientDirection('to bottom right', this)" style="--fa-rotate-angle: 225deg;" title="to bottom right">&#xf060;</button>
+                                <button class="active btn def" onclick="getGradientDirection('to bottom', this)" title="to bottom">&#xf063;</button>
+                                <button class="btn fa-rotate-by" onclick="getGradientDirection('to bottom left', this)" style="--fa-rotate-angle: 315deg;" title="to bottom left">&#xf060;</button>
+                                <button class="btn" onclick="getGradientDirection('to left', this)" title="to left">&#xf060;</button> 
+                                <button class="btn fa-rotate-by" onclick="getGradientDirection('to top left', this)" style="--fa-rotate-angle: 45deg;" title="to top left">&#xf060;</button>
+                                <button class="btn" onclick="getGradientDirection('to top', this)" title="to top">&#xf062;</button>
+                                <button class="btn fa-rotate-by" onclick="getGradientDirection('to top right', this)" style="--fa-rotate-angle: 135deg;" title="to top right">&#xf060;</button>
+                                <button class="btn isRadial" onclick="getGradientDirection('circle', this)" title="radial">&#xf192;</button>
+                            </div>             
+                        </div> 
+                    </div>                    
                 </div>
-            </div>            
+            </div>  
+
             <div class="reset-button">
-                <button class="btn btn-dark" id="reset">Restablecer valores &#xf2f9;</button>
+                <button class="btn btn-dark" id="reset">Restablecer valores &nbsp;<i class="fa-solid fa-arrow-rotate-right"></i></button>
             </div> 
+
             <div class="code">
                 <div class="form-floating">
                     <textarea class="form-control" id="css-code" spellcheck="false"></textarea>
@@ -67,29 +86,13 @@
                 <button class="btn btn-danger" id="copy-code" title="Copiar">&#xf0c5;</button>
             </div>
         </div>          
-        <div class="card-prev">
-            <div class="direction">
-                <label class="form-label">Direction:</label>
-                <button class="btn" onclick="getGradientDirection('to right', this)" title="to right">&#xf061;</button> 
-                <button class="btn fa-rotate-by" onclick="getGradientDirection('to bottom right', this)"
-                    style="--fa-rotate-angle: 225deg;" title="to bottom right">&#xf060;</button>
-                <button class="active btn def" onclick="getGradientDirection('to bottom', this)" title="to bottom">&#xf063;</button>
-                <button class="btn fa-rotate-by" onclick="getGradientDirection('to bottom left', this)"
-                    style="--fa-rotate-angle: 315deg;" title="to bottom left">&#xf060;</button>
-                <button class="btn" onclick="getGradientDirection('to left', this)" title="to left">&#xf060;</button> 
-                <button class="btn fa-rotate-by" onclick="getGradientDirection('to top left', this)"
-                    style="--fa-rotate-angle: 45deg;" title="to top left">&#xf060;</button>
-                <button class="btn" onclick="getGradientDirection('to top', this)" title="to top">&#xf062;</button>
-                <button class="btn fa-rotate-by" onclick="getGradientDirection('to top right', this)"
-                    style="--fa-rotate-angle: 135deg;" title="to top right">&#xf060;</button>
-                <button class="btn isRadial" onclick="getGradientDirection('circle', this)" title="Radial Gradient">&#xf192;</button>
-            </div>
-
+        
+        <div class="card-prev">    
             <div class="preview"><span>Vista previa</span></div>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>     
     <script src="src/js/main.js"></script>
 </body>
 </html>
