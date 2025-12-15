@@ -30,7 +30,7 @@
             <div class="color-options">
                 <div class="column">
                     <div class="input-group">
-                        <label class="form-label" for="color1">color<small title="núm. 1">&#xf05a;</small></label>
+                        <label class="form-label" for="color1">color<small title="Primario">&#xf05a;</small></label>
                         <div class="input-row">
                             <input type="color" id="color1" class="color-1">
                             <input type="range" class="form-range" id="clr1" min="0" max="100" step="1" value="0" oninput="range1Value.value=clr1.value">
@@ -38,17 +38,21 @@
                         </div>                        
                     </div>
                     <div class="input-group">
-                        <label class="form-label" for="color3">color<small title="núm. 3">&#xf05a;</small></label>
-                        <div class="input-row">
+                        <label class="form-label toggle-label">color <small title="Secundario">&#xf05a;</small>
+                            <input type="checkbox" id="enableColor3" title="Habilitar/Deshabilitar" hidden> <!-- hidden-->
+                            <i id="toggleColor3" class="fa-solid fa-plus toggle-icon" title="Habilitar/Deshabilitar"></i>
+                        </label>
+                        <div class="input-row" id="color-3-values">
                             <input type="color" id="color3" class="color-3">
-                            <input type="range" class="form-range" id="clr3" min="0" max="100" step="1" value="100" oninput="range3Value.value=clr3.value">
+                            <input type="range" id="clr3" min="0" max="100" step="1" value="100" oninput="range3Value.value=clr3.value">
                             <input type="number" id="range3Value" oninput="clr3.value=range3Value.value"><span>%</span>
-                        </div>                        
-                    </div> 
+                        </div>
+                    </div>
+
                 </div>  
                 <div class="column">
                     <div class="input-group">
-                        <label class="form-label" for="color2">color<small title="núm. 2">&#xf05a;</small></label>
+                        <label class="form-label" for="color2">color<small title="Secundario">&#xf05a;</small></label>
                         <div class="input-row">
                             <input type="color" id="color2" class="color-2">
                             <input type="range" class="form-range" id="clr2" min="0" max="100" step="1" value="100" oninput="range2Value.value=clr2.value">
