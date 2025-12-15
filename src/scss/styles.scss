@@ -48,12 +48,28 @@ body {
                     padding: 1em 0.5rem 0.5rem 0.5rem; border: 2px solid $oxfordBlue; border-bottom: 0; 
                     background-color: $redCrayola; color: white; text-align: center;
                     
-                    &:first-child { border-radius: 5px 0 0 0; border-right: 0; }
+                    &:first-child { 
+                        border-radius: 5px 0 0 0; border-right: 0; 
+                        
+                        /* Color 3 */
+                        .input-group:nth-child(2) {                                
+                            .toggle-label {
+                                position: relative; cursor: pointer; user-select: none;
+                            }
+                            .toggle-icon { 
+                                position: absolute; left: 6%; top: 6px;
+                                font-size: 11px; color: $naplesYellow;
+                                pointer-events: none; transition: .25s;    
+                            }
+                            .input-row.disabled { opacity: 0.4; pointer-events: none; }
+                        }
+                    }
+
                     &:last-child { border-radius: 0 5px 0 0; border-left: 2px dotted $oxfordBlue; }
     
                     .input-group { 
                         display: flex; flex-direction: column; justify-content: center; margin-bottom: 5px; 
-
+                        
                         &:last-child { border-top: 2px dotted $oxfordBlue; padding: 5px 0 0 0; }
                         
                         .form-label { 
