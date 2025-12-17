@@ -4,4 +4,5 @@
 
 🔗 https://mauriciobarrueta.github.io/gradientBgGenerator/
    
-![gradient](https://github.com/user-attachments/assets/c50e4839-fad7-48ea-863c-591fc8ddd261)
+
+<img width="1366" height="653" alt="gradient" src="https://github.com/user-attachments/assets/38ee6096-7c92-41fc-aaa9-a10b1e292add" />
